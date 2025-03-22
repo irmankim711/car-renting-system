@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Renting System - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login to Car Renting System</h1>
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <!-- Username Input -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <!-- Password Input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <!-- Submit Button -->
+            <button type="submit">Login</button>
+        </form>
+        <!-- Display Error Message -->
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+
+    <script>
+        // Function to validate login credentials
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Hardcoded credentials for demonstration
+            if (username === "user" && password === "password") {
+                // Redirect to dashboard on successful login
+                window.location.href = "dashboard.html";
+                return false; // Prevent form submission
+            } else {
+                // Display error message
+                document.getElementById("errorMessage").innerText = "Invalid username or password.";
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>

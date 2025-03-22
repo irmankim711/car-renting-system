@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rent a Car</h1>
+        <!-- Car Rental Form -->
+        <form id="rentalForm" onsubmit="return submitForm()">
+            <!-- Full Name Input -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <br>
+            <!-- Email Input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <!-- Car Type Dropdown -->
+            <label for="carType">Car Type:</label>
+            <select id="carType" name="carType" required>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="truck">Truck</option>
+                <option value="luxury">Luxury</option>
+            </select>
+            <br>
+            <!-- Rental Duration Input -->
+            <label for="rentalDuration">Rental Duration (days):</label>
+            <input type="number" id="rentalDuration" name="rentalDuration" min="1" required>
+            <br>
+            <!-- Additional Features Checkboxes -->
+            <label>Additional Features:</label>
+            <br>
+            <input type="checkbox" id="gps" name="gps">
+            <label for="gps">GPS Navigation</label>
+            <br>
+            <input type="checkbox" id="childSeat" name="childSeat">
+            <label for="childSeat">Child Seat</label>
+            <br>
+            <!-- Submit Button -->
+            <button type="submit">Submit Rental Request</button>
+        </form>
+        <!-- Confirmation Message -->
+        <p id="confirmationMessage" style="color: green;"></p>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitForm() {
+            // Display confirmation message
+            document.getElementById("confirmationMessage").innerText = "Your rental request has been submitted successfully!";
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
